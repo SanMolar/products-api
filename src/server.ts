@@ -8,6 +8,16 @@ app.get("/", (_req: Request, res: Response) => {
   res.send("Mi primera API está funcionando");
 });
 
+app.get("/products", (_req: Request, res: Response) => {
+  res.json({
+    message: "Lista de productos",
+    products: [
+      { id: 1, name: "Teclado", price: 500 },
+      { id: 2, name: "Mouse", price: 300 },
+    ],
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
